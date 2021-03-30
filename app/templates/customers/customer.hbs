@@ -30,12 +30,14 @@
                   @value={{this.model.lastName}} />
               </div>
             </div>
+            {{!-- EMAIL --}}
             <div class="form-row">
               <div class="form-group col-md-7">
                 <label for="customerEmailAddress">Email</label>
                 <Input @type="text" @class="form-control" @id="customerEmailAddress"
                   @value={{this.model.emailAddress}} />
               </div>
+              {{!-- --}}
               <div class="form-group col-md-5">
                 <label for="customerPhoneNumber">Phone Number</label>
                 <Input @type="tel" @class="form-control" @id="customerPhoneNumber" placeholder="(555) 555-5555"
@@ -56,7 +58,7 @@
               <div class="form-group col-md-4">
                 <label for="customerBudget">Budget</label>
                 <Input @type="text" @class="form-control" @id="customerBudget" @required={{true}}
-                  @value={{this.model.budget}} />
+                  @value={{this.model.budget}} @type="number" />
               </div>
             </div>
             <button type="submit" class="btn btn-info">Save changes</button>
