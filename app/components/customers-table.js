@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
-import { empty} from '@ember/object/computed';
+import { empty } from '@ember/object/computed';
 import { A } from '@ember/array';
 
 export default class CustomersTableComponent extends Component {
@@ -30,6 +30,12 @@ export default class CustomersTableComponent extends Component {
         width: 200,
         isSortable: false,
         breakpoints: ['tablet', 'desktop', 'jumbo']
+      },
+      {
+        name: "Phone",
+        valuePath: "phoneNumber",
+        isSortable: false,
+        breakpoints: ["tablet", "desktop", "jumbo"]
       },
       {
         name: 'Company',
