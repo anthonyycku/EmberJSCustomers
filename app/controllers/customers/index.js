@@ -9,8 +9,14 @@ export default class CustomersIndexController extends Controller {
   @sort('model', 'customersSortProps')
   sortedCustomers;
 
+
   get customersSortProps() {
-    return [this.sortProperty];
+    switch (this.sortProperty) {
+      case "budget":
+        return [this.sortProperty + ":desc"];
+      case "lastName":
+        return [this.sortProperty]
+    }
   }
 
   @action
