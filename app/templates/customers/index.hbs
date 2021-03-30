@@ -6,10 +6,16 @@
     </h5>
     <div>
       <select class="form-control" {{on "change" this.updateSortProperty}}>
-        <option value="lastName" selected={{eq this.sortProperty "lastName" }}>
+        <option value="lastNameAsc" selected={{eq this.sortProperty "lastNameAsc" }}>
           Sort by name (ASC)
         </option>
-        <option value="budget" selected={{eq this.sortProperty "budget" }}>
+        <option value="lastNameDesc" selected={{eq this.sortProperty "lastNameDesc" }}>
+          Sort by name (DESC)
+        </option>
+        <option value="budgetAsc" selected={{eq this.sortProperty "budgetAsc" }}>
+          Sort by budget (ASC)
+        </option>
+        <option value="budgetDesc" selected={{eq this.sortProperty "budgetDesc" }}>
           Sort by budget (DESC)
         </option>
       </select>
