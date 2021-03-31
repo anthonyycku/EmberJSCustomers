@@ -5,6 +5,9 @@ import { tracked } from '@glimmer/tracking';
 export default class SearchComponent extends Component {
     @tracked current = "";
 
+    get model() {
+        return this.args.model ? this.args.model : A();
+    }
     @action
     update(event) {
         this.current = event.target.value;
@@ -13,6 +16,6 @@ export default class SearchComponent extends Component {
     @action
     search(event) {
         event.preventDefault();
-        console.log(this.current);
+        console.log(this.args.model)
     }
 }
