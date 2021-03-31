@@ -30,13 +30,20 @@
                   @value={{this.model.lastName}} />
               </div>
             </div>
-            {{!-- EMAIL --}}
+
 
             <div class="form-row">
+              {{!-- EMAIL --}}
+
               <div class="form-group col-md-7">
                 <label for="customerEmailAddress">Email</label>
-                <Input @type="text" @class="form-control" @id="customerEmailAddress"
-                  @value={{this.model.emailAddress}} />
+                <Input @type="text" @class="form-control" @id="customerEmailAddress" @value={{this.model.emailAddress}}
+                  @keyUp={{this.update}} @autocomplete="off" />
+                {{#if this.validEmail}}
+                <p class="validEmail">✓ Valid email!</p>
+                {{else}}
+                <p class="invalidEmail">✖ Invalid email!</p>
+                {{/if}}
               </div>
 
               {{!-- --}}

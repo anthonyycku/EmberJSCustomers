@@ -3,23 +3,24 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class CustomersCustomerController extends Controller {
-    @tracked validEmail = false;
+    @tracked validEmail = true;
 
     @action
     async saveCustomer(event) {
         event.preventDefault();
 
-        if (this.validate(this.model.emailAddress)) {
+        if (this.validEmail) {
             await this.model.save();
             this.transitionToRoute('customers.index');
         } else {
-            console.log("need valid email")
+            alert("Please enter a valid email in the format 123@abc.xyz")
         }
     }
 
-    validate = (email) => {
+    @action
+    update(event) {
         const regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        email.match(regex) ? this.validEmail = true : this.validEmail = false;
-        return email.match(regex);
+        event.target.value.match(regex) ? this.validEmail = true : this.validEmail = false;
+        console.log(event.target.value)
     }
 }
