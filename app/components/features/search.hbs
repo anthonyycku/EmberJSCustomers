@@ -1,3 +1,4 @@
 <form {{on "submit" this.search}}>
-    <Input class="form-control" type="search" placeholder="Search..." @value={{this.current}} @keyUp={{this.update}} />
+    <Input class="form-control" type="search" placeholder="Search..." @value={{this.current}} @keyUp={{this.update}}
+        autocomplete="off" />
 </form>

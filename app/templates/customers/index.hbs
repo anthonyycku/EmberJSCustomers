@@ -9,16 +9,16 @@
     {{!-- --}}
     <div>
       <select class="form-control" {{on "change" this.updateSortProperty}}>
-        <option value="lastNameAsc" selected={{eq this.sortProperty "lastNameAsc" }}>
+        <option id="lastNameAsc" value="lastName" selected={{eq this.sortID "lastNameAsc" }}>
           Sort by name (ASC)
         </option>
-        <option value="lastNameDesc" selected={{eq this.sortProperty "lastNameDesc" }}>
+        <option id="lastNameDesc" value="lastName" selected={{eq this.sortID "lastNameDesc" }}>
           Sort by name (DESC)
         </option>
-        <option value="budgetAsc" selected={{eq this.sortProperty "budgetAsc" }}>
+        <option id="budgetAsc" value="budget" selected={{eq this.sortID "budgetAsc" }}>
           Sort by budget (ASC)
         </option>
-        <option value="budgetDesc" selected={{eq this.sortProperty "budgetDesc" }}>
+        <option id="budgetDesc" value="budget" selected={{eq this.sortID "budgetDesc" }}>
           Sort by budget (DESC)
         </option>
       </select>
