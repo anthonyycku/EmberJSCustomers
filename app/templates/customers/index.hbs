@@ -1,9 +1,12 @@
 <Page::Header @title="Customers" />
 <Page::Content>
+  <h5 class="card-title">
+    {{this.sortedCustomers.length}} Results
+  </h5>
   <div class="d-flex justify-content-between align-content-center mb-3 form-inline">
-    <h5 class="card-title">
-      {{this.sortedCustomers.length}} Results
-    </h5>
+    {{!-- Search --}}
+    <Features::Search />
+    {{!-- --}}
     <div>
       <select class="form-control" {{on "change" this.updateSortProperty}}>
         <option value="lastNameAsc" selected={{eq this.sortProperty "lastNameAsc" }}>
@@ -21,6 +24,9 @@
       </select>
     </div>
   </div>
+
+
+
   <div class="card">
     <CustomersTable @model={{this.sortedCustomers}} />
   </div>
