@@ -5,7 +5,7 @@
   </h5>
   <div class="d-flex justify-content-between align-content-center mb-3 form-inline">
     {{!-- Search --}}
-    <Features::Search />
+    <Features::Search @model={{this.sortedCustomers}} />
     {{!-- --}}
     <div>
       <select class="form-control" {{on "change" this.updateSortProperty}}>
